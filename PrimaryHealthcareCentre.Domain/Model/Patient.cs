@@ -12,11 +12,10 @@ namespace PrimaryHealthcareCentre.Domain.Model
         public string PhoneNumber { get; set; }
         public string PassportNumber{ get; set; }
         public string? WorkPlace { get; set; }
-        public string Password { get; set; }
         public virtual MedicalCard MedicalCard { get; set; } = null!;
         public virtual List<Prescription> Prescriptions { get; set; } = null!;
 
-        public Patient(string fullName, string gender, DateTime dateOfBirth, string phoneNumber, string passportNumber, string password)
+        public Patient(string fullName, string gender, DateTime dateOfBirth, string phoneNumber, string passportNumber)
         {
             if (string.IsNullOrWhiteSpace(fullName))
             {
@@ -43,7 +42,6 @@ namespace PrimaryHealthcareCentre.Domain.Model
             DateOfBirth = dateOfBirth;
             PhoneNumber = phoneNumber;
             PassportNumber = passportNumber;
-            Password = password;
         }
         public override string ToString()
         {

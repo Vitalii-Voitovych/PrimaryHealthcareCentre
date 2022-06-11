@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\cross.png" />
+    <None Remove="Images\document.png" />
+    <None Remove="Images\home.png" />
+    <None Remove="Images\minus.png" />
+    <None Remove="Images\stethoscope.png" />
+    <None Remove="Images\treatment.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\cross.png" />
+    <Resource Include="Images\document.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\minus.png" />
+    <Resource Include="Images\stethoscope.png" />
+    <Resource Include="Images\treatment.png" />
+  </ItemGroup>
+
+</Project>

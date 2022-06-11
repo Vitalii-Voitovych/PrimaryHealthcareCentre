@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-
-namespace PrimaryHealthcareCentre.Domain.Model
+﻿namespace PrimaryHealthcareCentre.Domain.Model
 {
     public class Doctor
     {
@@ -15,11 +11,9 @@ namespace PrimaryHealthcareCentre.Domain.Model
         public string Department { get; set; }
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
-        [MinLength(8)]
-        public string Password { get; set; }
         public virtual List<Reception> Receptions { get; set; } = null!;
 
-        public Doctor(string fullName, string specialty, string phoneNumber, int cabinetNumber, string department, DateTime startTime, DateTime endTime, string password)
+        public Doctor(string fullName, string specialty, string phoneNumber, int cabinetNumber, string department, DateTime startTime, DateTime endTime)
         {
             if (string.IsNullOrWhiteSpace(fullName))
             {
@@ -56,7 +50,6 @@ namespace PrimaryHealthcareCentre.Domain.Model
             Department = department;
             StartTime = startTime;
             EndTime = endTime;
-            Password = password;
         }
 
         public override string ToString()

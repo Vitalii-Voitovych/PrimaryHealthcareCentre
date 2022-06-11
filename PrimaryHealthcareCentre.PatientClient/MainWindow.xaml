@@ -1,0 +1,77 @@
+﻿<Window x:Class="PrimaryHealthcareCentre.PatientClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrimaryHealthcareCentre.PatientClient"
+        xmlns:uc="clr-namespace:PrimaryHealthcareCentre.UIComponent.UserControl;assembly=PrimaryHealthcareCentre.UIComponent"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1000"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Border CornerRadius="20,20,15,20"
+            Background="#FFF8DC">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="2" ShadowDepth="3" Opacity="0.7" Color="#000000"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Background="#265F2F"
+                    CornerRadius="15,15,0,0"
+                    Grid.ColumnSpan="2">
+                <DockPanel Background="Transparent">
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="КНП ЦПМСД СМР"
+                                   Foreground="#FFF8DC"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Center"
+                                HorizontalAlignment="Right"
+                                Orientation="Horizontal"
+                                Margin="0,0,10,0">
+                        <uc:HeaderButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/minus.png"
+                                       HorizontalAlignment="Right"
+                                       Style="{StaticResource HeaderButtonStyle}" Cursor="Hand"/>
+                        <uc:HeaderButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/cross.png"
+                                       HorizontalAlignment="Right"
+                                       Style="{StaticResource HeaderButtonStyle}"/>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+            <Border Background="#427345"
+                    CornerRadius="0,0,0,15"
+                    Grid.Row="1">
+                <StackPanel VerticalAlignment="Center">
+                    <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/home.png"
+                                   Content="Головна"
+                                   IsChecked="True"
+                                   Style="{StaticResource MenuButtonStyle}"/>
+                    <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/stethoscope.png"
+                                   Content="Лікарі"
+                                   Style="{StaticResource MenuButtonStyle}"/>
+                    <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/treatment.png"
+                                   Content="Мед-карта"
+                                   Style="{StaticResource MenuButtonStyle}"/>
+                    <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/document.png"
+                                   Content="Рецепти"
+                                   Style="{StaticResource MenuButtonStyle}"/>
+                </StackPanel>
+            </Border>
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"/>
+        </Grid>
+    </Border>
+</Window>
