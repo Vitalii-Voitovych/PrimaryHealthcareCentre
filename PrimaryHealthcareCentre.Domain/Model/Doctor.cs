@@ -9,11 +9,11 @@
         public string? Email { get; set; }
         public int CabinetNumber { get; set; }
         public string Department { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime EndTime { get; set; }
+        public string StartTime { get; set; }
+        public string EndTime { get; set; }
         public virtual List<Reception> Receptions { get; set; } = null!;
 
-        public Doctor(string fullName, string specialty, string phoneNumber, int cabinetNumber, string department, DateTime startTime, DateTime endTime)
+        public Doctor(string fullName, string specialty, string phoneNumber, int cabinetNumber, string department, string startTime, string endTime)
         {
             if (string.IsNullOrWhiteSpace(fullName))
             {
@@ -34,14 +34,6 @@
             if (string.IsNullOrWhiteSpace(department))
             {
                 throw new ArgumentNullException(nameof(department), "Phone number can`t null");
-            }
-            if (startTime < new DateTime(0001,1,1,9,0,0))
-            {
-                throw new ArgumentException("Start Time can`t", nameof(startTime));
-            }
-            if (endTime < new DateTime(0001, 1, 1,17, 0, 0))
-            {
-                throw new ArgumentException("End Time can`t", nameof(startTime));
             }
             FullName = fullName;
             Specialty = specialty;

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace PrimaryHealthcareCentre.Domain.Model
+﻿namespace PrimaryHealthcareCentre.Domain.Model
 {
     public class Prescription
     {
@@ -10,5 +8,10 @@ namespace PrimaryHealthcareCentre.Domain.Model
 
         public int PreparationId { get; set; }
         public virtual Preparation Preparation { get; set; } = null!;
+        public DateTime Date { get; set; }
+        public override string ToString()
+        {
+            return $"{Preparation.Name} {Preparation.Weight} {Preparation.QuantityPills}";
+        }
     }
 }

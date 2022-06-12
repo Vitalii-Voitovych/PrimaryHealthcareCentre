@@ -5,12 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrimaryHealthcareCentre.PatientClient"
         xmlns:uc="clr-namespace:PrimaryHealthcareCentre.UIComponent.UserControl;assembly=PrimaryHealthcareCentre.UIComponent"
+        xmlns:viewModel="clr-namespace:PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="1000"
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        x:Name="WindowMain">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
     <Border CornerRadius="20,20,15,20"
             Background="#FFF8DC">
         <Border.Effect>
@@ -44,10 +49,14 @@
                                 Margin="0,0,10,0">
                         <uc:HeaderButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/minus.png"
                                        HorizontalAlignment="Right"
-                                       Style="{StaticResource HeaderButtonStyle}" Cursor="Hand"/>
+                                       Style="{StaticResource HeaderButtonStyle}" Cursor="Hand"
+                                       Command="{Binding MinimizeCommand}"
+                                       CommandParameter="{Binding ElementName=WindowMain}"/>
                         <uc:HeaderButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/cross.png"
                                        HorizontalAlignment="Right"
-                                       Style="{StaticResource HeaderButtonStyle}"/>
+                                       Style="{StaticResource HeaderButtonStyle}"
+                                       Command="{Binding CloseCommand}"
+                                       CommandParameter="{Binding ElementName=WindowMain}"/>
                     </StackPanel>
                 </DockPanel>
             </Border>
@@ -58,20 +67,25 @@
                     <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/home.png"
                                    Content="Головна"
                                    IsChecked="True"
-                                   Style="{StaticResource MenuButtonStyle}"/>
+                                   Style="{StaticResource MenuButtonStyle}"
+                                   Command="{Binding HomeCommand}"/>
                     <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/stethoscope.png"
                                    Content="Лікарі"
-                                   Style="{StaticResource MenuButtonStyle}"/>
+                                   Style="{StaticResource MenuButtonStyle}"
+                                   Command="{Binding DoctorsCommand}"/>
                     <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/treatment.png"
                                    Content="Мед-карта"
-                                   Style="{StaticResource MenuButtonStyle}"/>
+                                   Style="{StaticResource MenuButtonStyle}"
+                                   Command="{Binding MedicalCardCommand}" Cursor="Hand"/>
                     <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/document.png"
                                    Content="Рецепти"
-                                   Style="{StaticResource MenuButtonStyle}"/>
+                                   Style="{StaticResource MenuButtonStyle}"
+                                   Command="{Binding PrescriptionsCommand}"/>
                 </StackPanel>
             </Border>
             <ContentControl Grid.Row="1"
-                            Grid.Column="1"/>
+                            Grid.Column="1"
+                            Content="{Binding CurrentView}"/>
         </Grid>
     </Border>
 </Window>

@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PrimaryHealthcareCentre.Domain\PrimaryHealthcareCentre.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\cross.png" />
     <Resource Include="Images\document.png" />
     <Resource Include="Images\home.png" />
