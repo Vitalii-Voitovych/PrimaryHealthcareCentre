@@ -11,7 +11,13 @@
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/HeaderButton.xaml"/>
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/MenuButton.xaml"/>
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemTextBlock.xaml"/>
+                <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemTextBlock2.xaml"/>
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemButton.xaml"/>
+                <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemButton2.xaml"/>
+                <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemButton3.xaml"/>
+                <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/PatientDataTextBlock.xaml"/>
+                <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ResultTextBox.xaml"/>
+                <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/CustomGreenButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>

@@ -28,5 +28,10 @@ namespace PrimaryHealthcareCentre.Domain.Model
             Weight = weight;
             QuantityPills = quantityPills;
         }
+
+        public override string ToString()
+        {
+            return $"{Name} {Weight} {QuantityPills}";
+        }
     }
 }

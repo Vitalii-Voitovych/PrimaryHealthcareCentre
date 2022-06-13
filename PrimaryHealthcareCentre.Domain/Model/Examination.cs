@@ -6,6 +6,7 @@
         
         public int ReceptionId { get; set; }
         public virtual Reception Reception { get; set; } = null!;
+        public string Result { get; set; } = null!;
         public DateTime Date { get; set; }
     }
 }

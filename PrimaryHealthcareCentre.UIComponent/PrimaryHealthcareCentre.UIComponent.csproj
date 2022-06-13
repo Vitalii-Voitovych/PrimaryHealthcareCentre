@@ -9,9 +9,11 @@
   <ItemGroup>
     <None Remove="Images\cross.png" />
     <None Remove="Images\document.png" />
+    <None Remove="Images\edit.png" />
     <None Remove="Images\examination.png" />
     <None Remove="Images\home.png" />
     <None Remove="Images\minus.png" />
+    <None Remove="Images\patient-green.png" />
     <None Remove="Images\patient.png" />
     <None Remove="Images\stethoscope.png" />
     <None Remove="Images\treatment.png" />
@@ -24,9 +26,11 @@
   <ItemGroup>
     <Resource Include="Images\cross.png" />
     <Resource Include="Images\document.png" />
+    <Resource Include="Images\edit.png" />
     <Resource Include="Images\examination.png" />
     <Resource Include="Images\home.png" />
     <Resource Include="Images\minus.png" />
+    <Resource Include="Images\patient-green.png" />
     <Resource Include="Images\patient.png" />
     <Resource Include="Images\stethoscope.png" />
     <Resource Include="Images\treatment.png" />
