@@ -4,11 +4,83 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrimaryHealthcareCentre.DoctorClient"
+        xmlns:uc="clr-namespace:PrimaryHealthcareCentre.UIComponent.UserControl;assembly=PrimaryHealthcareCentre.UIComponent"
+        xmlns:viewModel="clr-namespace:PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="1000"
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
-    
+        AllowsTransparency="True"
+        x:Name="WindowMain">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+    <Border CornerRadius="20,20,15,20"
+            Background="#FFF8DC">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="2" ShadowDepth="3" Opacity="0.7" Color="#000000"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Border Background="#265F2F"
+                    CornerRadius="15,15,0,0"
+                    Grid.ColumnSpan="2">
+                <DockPanel Background="Transparent">
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center">
+                        <TextBlock Text="КНП ЦПМСД СМР"
+                                   Foreground="#FFF8DC"
+                                   FontSize="24"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"
+                                   Margin="10,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Center"
+                                HorizontalAlignment="Right"
+                                Orientation="Horizontal"
+                                Margin="0,0,10,0">
+                        <uc:HeaderButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/minus.png"
+                                       HorizontalAlignment="Right"
+                                       Style="{StaticResource HeaderButtonStyle}" Cursor="Hand"
+                                       Command="{Binding MinimizeCommand}"
+                                       CommandParameter="{Binding ElementName=WindowMain}"/>
+                        <uc:HeaderButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/cross.png"
+                                       HorizontalAlignment="Right"
+                                       Style="{StaticResource HeaderButtonStyle}"
+                                       Command="{Binding CloseCommand}"
+                                       CommandParameter="{Binding ElementName=WindowMain}"/>
+                    </StackPanel>
+                </DockPanel>
+            </Border>
+            <Border Background="#427345"
+                    CornerRadius="0,0,0,15"
+                    Grid.Row="1">
+                <StackPanel VerticalAlignment="Center">
+                    <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/home.png"
+                                   Content="Головна"
+                                   IsChecked="True"
+                                   Style="{StaticResource MenuButtonStyle}" Cursor="Hand"
+                                   Command="{Binding HomeCommand}"/>
+                    <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/patient.png"
+                                   Content="Пацієнти"
+                                   Style="{StaticResource MenuButtonStyle}" Cursor="Hand"
+                                   Command="{Binding PatientCommand}"/>
+                    <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/examination.png"
+                                   Content="Обстеження"
+                                   Style="{StaticResource MenuButtonStyle}" Cursor="Hand"/>
+                </StackPanel>
+            </Border>
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Content="{Binding CurrentView}"/>
+        </Grid>
+    </Border>
 </Window>

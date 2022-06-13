@@ -2,6 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:PrimaryHealthcareCentre.DoctorClient"
+             xmlns:view="clr-namespace:PrimaryHealthcareCentre.DoctorClient.MVVM.View"
+             xmlns:viewModel="clr-namespace:PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -11,6 +13,12 @@
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemTextBlock.xaml"/>
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:PatientViewModel}">
+                <view:PatientView/>
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

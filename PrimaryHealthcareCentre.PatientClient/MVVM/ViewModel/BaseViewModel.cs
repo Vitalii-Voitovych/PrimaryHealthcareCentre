@@ -1,10 +1,11 @@
 ﻿using PrimaryHealthcareCentre.Domain;
+using PrimaryHealthcareCentre.UIComponent;
 using PrimaryHealthcareCentre.UIComponent.Commands;
 using System.Windows;
 
-namespace PrimaryHealthcareCentre.UIComponent
+namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
 {
-    public abstract class BaseViewModel : ObservableObject
+    public abstract class BaseViewModel : ObservableObject, IBaseControlCommand
     {
         public RelayCommand<Window> CloseCommand { get; }
         public RelayCommand<Window> MinimizeCommand { get; }
