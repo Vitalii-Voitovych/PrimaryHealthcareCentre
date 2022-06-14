@@ -6,13 +6,15 @@
         xmlns:local="clr-namespace:PrimaryHealthcareCentre.PatientClient"
         xmlns:uc="clr-namespace:PrimaryHealthcareCentre.UIComponent.UserControl;assembly=PrimaryHealthcareCentre.UIComponent"
         xmlns:viewModel="clr-namespace:PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel"
+        xmlns:ui="clr-namespace:PrimaryHealthcareCentre.UIComponent;assembly=PrimaryHealthcareCentre.UIComponent"
         mc:Ignorable="d"
         Title="MainWindow" Height="550" Width="1000"
         ResizeMode="NoResize"
         WindowStyle="None"
         Background="Transparent"
         AllowsTransparency="True"
-        x:Name="WindowMain">
+        x:Name="WindowMain"
+        ui:DialogCloser.DialogResult="{Binding DialogResult}">
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>

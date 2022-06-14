@@ -16,8 +16,8 @@
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemButton2.xaml"/>
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ListBoxItemButton3.xaml"/>
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/PatientDataTextBlock.xaml"/>
-                <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/ResultTextBox.xaml"/>
                 <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/CustomGreenButton.xaml"/>
+                <ResourceDictionary Source="/PrimaryHealthcareCentre.UIComponent;Component/Styles/FieldTextBox.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
@@ -27,6 +27,9 @@
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:ExaminationViewModel}">
                 <view:ExaminationView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
+                <view:LoginWindow/>
             </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>

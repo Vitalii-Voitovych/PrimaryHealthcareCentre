@@ -74,7 +74,7 @@
                 <TextBox TextWrapping="WrapWithOverflow"
                      AcceptsReturn="True"
                      Height="125"
-                     Style="{StaticResource ResultTextBoxStyle}" Width="274"/>
+                     Style="{StaticResource FieldTextBox}" Width="274"/>
                 <Button Content="Закінчити"
                         Style="{StaticResource CustomGreenButtonStyle}" Cursor="Hand"/>
             </StackPanel>

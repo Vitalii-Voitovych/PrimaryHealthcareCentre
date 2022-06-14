@@ -4,6 +4,7 @@
     {
         public int DoctorId { get; set; }
         public string FullName { get; set; }
+        public string PassportNumber { get; set; }
         public string Specialty { get; set; }
         public string PhoneNumber { get; set; }
         public string? Email { get; set; }
@@ -13,7 +14,7 @@
         public string EndTime { get; set; }
         public virtual List<Reception> Receptions { get; set; } = null!;
 
-        public Doctor(string fullName, string specialty, string phoneNumber, int cabinetNumber, string department, string startTime, string endTime)
+        public Doctor(string fullName, string passportNumber, string specialty, string phoneNumber, int cabinetNumber, string department, string startTime, string endTime)
         {
             if (string.IsNullOrWhiteSpace(fullName))
             {
@@ -36,6 +37,7 @@
                 throw new ArgumentNullException(nameof(department), "Phone number can`t null");
             }
             FullName = fullName;
+            PassportNumber = passportNumber;
             Specialty = specialty;
             PhoneNumber = phoneNumber;
             CabinetNumber = cabinetNumber;

@@ -1,4 +1,5 @@
 ﻿using PrimaryHealthcareCentre.Domain;
+using PrimaryHealthcareCentre.PatientClient.MVVM.View;
 using PrimaryHealthcareCentre.UIComponent;
 using PrimaryHealthcareCentre.UIComponent.Commands;
 using System;
@@ -18,6 +19,17 @@ namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        private bool dialogResult;
+        public bool DialogResult
+        {
+            get => dialogResult;
+            set
+            {
+                dialogResult = value;
+                OnPropertyChanged();
+            }
+        }
         public HomeViewModel HomeVM { get; }
         public DoctorsViewModel DoctorsVM { get; }
         public MedicalCardViewModel MedicalCardVM { get; }
@@ -29,6 +41,11 @@ namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
 
         public MainViewModel()
         {
+            LoginWindow loginWindow = new LoginWindow();
+            if (loginWindow.ShowDialog() == false)
+            {
+                DialogResult = false;
+            }
             HomeVM = new();
             DoctorsVM = new();
             MedicalCardVM = new();

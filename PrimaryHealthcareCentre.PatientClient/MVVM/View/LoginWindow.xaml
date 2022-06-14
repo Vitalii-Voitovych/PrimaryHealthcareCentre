@@ -1,0 +1,62 @@
+﻿<Window x:Class="PrimaryHealthcareCentre.PatientClient.MVVM.View.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PrimaryHealthcareCentre.PatientClient.MVVM.View"
+        xmlns:viewModel="clr-namespace:PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel"
+        xmlns:uc="clr-namespace:PrimaryHealthcareCentre.UIComponent.UserControl;assembly=PrimaryHealthcareCentre.UIComponent"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="430" Width="300"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        x:Name="WindowLogin">
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+    <Border CornerRadius="12,12,10,10"
+            Background="#FFF8DC">
+        <StackPanel>
+            <Border CornerRadius="10,10,0,0"
+                    Background="#265F2F">
+                <StackPanel HorizontalAlignment="Right">
+                    <uc:HeaderButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/cross.png"
+                                 HorizontalAlignment="Right"
+                                 Margin="0,5,5,0"
+                                 IsCancel="True"
+                                 Style="{StaticResource HeaderButtonStyle}" Cursor="Hand"
+                                 Command="{Binding CloseCommand}"
+                                 CommandParameter="{Binding ElementName=WindowLogin}"/>
+                </StackPanel>
+            </Border>
+            <StackPanel>
+                <TextBlock Text="П.І.П"
+                           Margin="10,7,0,0"
+                           Style="{StaticResource PatientDataTextBlockStyle}"/>
+                <TextBox Style="{StaticResource FieldTextBox}"
+                         Height="40"/>
+                <TextBlock Text="Стать"
+                           Margin="10,7,0,0"
+                           Style="{StaticResource PatientDataTextBlockStyle}"/>
+                <TextBox Style="{StaticResource FieldTextBox}"
+                         Height="40"/>
+                <TextBlock Text="Дата народження"
+                           Margin="10,7,0,0"
+                           Style="{StaticResource PatientDataTextBlockStyle}"/>
+                <TextBox Style="{StaticResource FieldTextBox}"
+                         Height="40"/>
+                <TextBlock Text="Номер телефону"
+                           Margin="10,7,0,0"
+                           Style="{StaticResource PatientDataTextBlockStyle}"/>
+                <TextBox Style="{StaticResource FieldTextBox}"
+                         Height="40"/>
+                <StackPanel HorizontalAlignment="Center">
+                    <Button Content="Вхід"
+                            Style="{StaticResource CustomGreenButtonStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Border>
+</Window>

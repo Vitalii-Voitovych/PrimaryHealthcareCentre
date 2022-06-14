@@ -2,7 +2,7 @@
 
 namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
 {
-    public class MedicalCardViewModel
+    public class MedicalCardViewModel : BaseViewModel
     {
     }
 }

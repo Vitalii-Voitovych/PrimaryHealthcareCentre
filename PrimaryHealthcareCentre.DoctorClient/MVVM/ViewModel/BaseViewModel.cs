@@ -37,7 +37,7 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
 
         public BaseViewModel()
         {
-            CurrentPatient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "3803233232", "030230233");
+            CurrentPatient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "3803233232");
             CloseCommand = new RelayCommand<Window>((window) =>
             {
                 window.Close();
