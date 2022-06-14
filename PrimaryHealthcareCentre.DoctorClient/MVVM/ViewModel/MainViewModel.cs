@@ -35,6 +35,10 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
             {
                 DialogResult = false;
             }
+            else
+            {
+                DialogResult = true;
+            }
             HomeVM = new();
             PatientVM = new();
             ExaminationVM = new();

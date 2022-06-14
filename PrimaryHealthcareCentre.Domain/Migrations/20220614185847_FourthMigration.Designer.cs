@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PrimaryHealthcareCentre.Domain.EF;
 
@@ -11,9 +12,10 @@ using PrimaryHealthcareCentre.Domain.EF;
 namespace PrimaryHealthcareCentre.Domain.Migrations
 {
     [DbContext(typeof(PrimaryHealthCentreDbContext))]
-    partial class PrimaryHealthCentreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220614185847_FourthMigration")]
+    partial class FourthMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,6 +43,10 @@ namespace PrimaryHealthcareCentre.Domain.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PassportNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

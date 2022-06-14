@@ -13,19 +13,7 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
         public ObservableCollection<Reception> LogOfReception { get; }
         public PatientViewModel()
         {
-            LogOfReception = new()
-            {
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-                new Reception(){ Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "380924347484"), Doctor = new Doctor("Качмар Р.Р.", "030203023", "Тепапевт", "380929494394", 4, "Травматологія", "10:00:00", "12:00:00"), DateOfReception = DateTime.Now},
-            };
+
         }
     }
 }

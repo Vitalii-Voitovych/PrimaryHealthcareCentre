@@ -4,7 +4,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PrimaryHealthcareCentre.DoctorClient.MVVM.View"
+             xmlns:viewModel="clr-namespace:PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
-    
+    <UserControl.DataContext>
+        <viewModel:HomeViewModel/>
+    </UserControl.DataContext>
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <TextBlock Text="Хорошого робочого дня!"
+                   FontSize="36"
+                   Foreground="#265F2F"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+        <TextBlock Text="{Binding Doctor.FullName}"
+                   FontSize="36"
+                   Foreground="#265F2F"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+    </StackPanel>
 </UserControl>

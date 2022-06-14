@@ -133,25 +133,28 @@
                         HorizontalAlignment="Center">
                 <Border CornerRadius="10"
                     Background="#265F2F"
-                    Margin="00,0" Width="255">
+                    Margin="00,0" Width="317">
                     <ListBox ItemsSource="{Binding PatientPreparations}" 
                          Height="230"
                          Background="Transparent"
                          BorderThickness="0"
-                         HorizontalAlignment="Center" Width="221">
+                         HorizontalAlignment="Center" Width="297">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal"
                                         VerticalAlignment="Center">
                                     <TextBlock Text="{Binding Name}"
+                                               Width="140"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>
                                     <TextBlock Text="{Binding Weight}"
                                            Margin="10,0,0,0"
+                                               Width="30"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>
                                     <TextBlock Text="мг"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>
                                     <TextBlock Text="{Binding QuantityPills}"
                                            Margin="10,0,0,0"
+                                               Width="21"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>
                                     <TextBlock Text="шт."
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>

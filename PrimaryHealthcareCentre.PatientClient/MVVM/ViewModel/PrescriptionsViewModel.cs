@@ -9,69 +9,7 @@ namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
 {
     public class PrescriptionsViewModel
     {
-        public ObservableCollection<List<Prescription>> Prescriptions { get; } = new()
-        {
-            new List<Prescription>
-            {
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-            },
-            new List<Prescription>
-            {
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-            },
-            new List<Prescription>
-            {
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-            },
-            new List<Prescription>
-            {
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-            },
-            new List<Prescription>
-            {
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002,11,7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-                new Prescription(){ Patient = new Patient("Качмар Р.Р.", "Чоловіча", new DateTime(2002, 11, 7), "380923232343"), Preparation = new Preparation("Анальгін", 100.0, 10), Date = DateTime.Now },
-            }
-        };
+        public ObservableCollection<List<Prescription>> Prescriptions { get; }
 
         public PrescriptionsViewModel()
         {

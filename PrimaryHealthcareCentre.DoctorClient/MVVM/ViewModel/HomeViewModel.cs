@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
 {
-    public class HomeViewModel
+    public class HomeViewModel : BaseViewModel
     {
     }
 }

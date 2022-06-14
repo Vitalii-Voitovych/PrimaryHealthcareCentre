@@ -3,6 +3,7 @@ using PrimaryHealthcareCentre.UIComponent;
 using System.Windows;
 using PrimaryHealthcareCentre.Domain;
 using PrimaryHealthcareCentre.Domain.Model;
+using PrimaryHealthcareCentre.Domain.EF;
 using System;
 
 namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
@@ -31,13 +32,23 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
+        private static Doctor? doctor;
+        public Doctor? Doctor
+        {
+            get => doctor;
+            set
+            {
+                doctor = value;
+                OnPropertyChanged();
+            }
+        }
+        public PrimaryHealthCentreDbContext Db { get; } = new();
 
         public RelayCommand<Window> CloseCommand { get; }
         public RelayCommand<Window> MinimizeCommand { get; }
 
         public BaseViewModel()
         {
-            CurrentPatient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "3803233232");
             CloseCommand = new RelayCommand<Window>((window) =>
             {
                 window.Close();

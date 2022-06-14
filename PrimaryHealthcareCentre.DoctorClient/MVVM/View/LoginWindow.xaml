@@ -36,15 +36,20 @@
                            Margin="10,7,0,0"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                 <TextBox Style="{StaticResource FieldTextBox}"
+                         Text="{Binding FullName, UpdateSourceTrigger=PropertyChanged}"
                          Height="40"/>
                 <TextBlock Text="Номер телефону"
                            Margin="10,7,0,0"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                 <TextBox Style="{StaticResource FieldTextBox}"
+                         VerticalAlignment="Center"
+                         Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"
                          Height="40"/>
                 <StackPanel HorizontalAlignment="Center">
                     <Button Content="Вхід"
-                            Style="{StaticResource CustomGreenButtonStyle}"/>
+                            Style="{StaticResource CustomGreenButtonStyle}"
+                            Command="{Binding LoginCommand}"
+                            CommandParameter="{Binding ElementName=WindowLogin}"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

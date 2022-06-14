@@ -24,7 +24,6 @@ namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
 
         public BaseViewModel()
         {
-            Patient = new Patient("Роман Качмар", "Чоловік", DateTime.Parse("07.11.2002"), "3803233232");
             CloseCommand = new RelayCommand<Window>((window) =>
             {
                 window.Close();
