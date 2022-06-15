@@ -1,8 +1,10 @@
 ﻿using PrimaryHealthcareCentre.Domain;
+using PrimaryHealthcareCentre.Domain.Model;
 using PrimaryHealthcareCentre.PatientClient.MVVM.View;
 using PrimaryHealthcareCentre.UIComponent;
 using PrimaryHealthcareCentre.UIComponent.Commands;
 using System;
+using System.Collections.Generic;
 
 namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
 {
@@ -45,6 +47,10 @@ namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
             if (loginWindow.ShowDialog() == false)
             {
                 DialogResult = false;
+            }
+            else
+            {
+                DialogResult = true;
             }
             HomeVM = new();
             DoctorsVM = new();

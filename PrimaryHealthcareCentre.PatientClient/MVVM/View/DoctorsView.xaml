@@ -6,15 +6,29 @@
              xmlns:local="clr-namespace:PrimaryHealthcareCentre.PatientClient.MVVM.View"
              xmlns:viewModel="clr-namespace:PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="800"
+             x:Name="DoctorView">
     <UserControl.DataContext>
         <viewModel:DoctorsViewModel/>
     </UserControl.DataContext>
     <StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <TextBlock Text="Дата запису"
+                       Foreground="#265F2F"
+                       FontWeight="Bold"
+                       FontSize="24"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBox Text="{Binding Date, UpdateSourceTrigger=PropertyChanged}"
+                     Width="225"
+                     Height="30"
+                     Style="{StaticResource FieldTextBox}"/>
+        </StackPanel>
         <ListBox ItemsSource="{Binding Doctors}"
                  Background="Transparent"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-                 Height="500"
+                 Height="460"
                  BorderThickness="0">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -35,8 +49,9 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <StackPanel Grid.Column="0"
-                                        Margin="10,0,0,0">
+                                        Margin="5,0,0,0">
                                 <TextBlock Text="П.І.П"
+                                           Height="55.86"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>
                                 <TextBlock Text="Спеціалізація"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>
@@ -53,6 +68,8 @@
                             </StackPanel>
                             <StackPanel Grid.Column="1">
                                 <TextBlock Text="{Binding FullName}"
+                                           TextWrapping="WrapWithOverflow"
+                                           Height="55.86"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>
                                 <TextBlock Text="{Binding Specialty}"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>

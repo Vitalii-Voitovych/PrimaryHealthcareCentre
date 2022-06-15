@@ -4,7 +4,6 @@ using System.Windows;
 using PrimaryHealthcareCentre.Domain;
 using PrimaryHealthcareCentre.Domain.Model;
 using PrimaryHealthcareCentre.Domain.EF;
-using System;
 
 namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
 {
@@ -22,16 +21,6 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
             }
         }
 
-        private static Patient currentPatient = null!;
-        public Patient CurrentPatient
-        {
-            get => currentPatient;
-            set
-            {
-                currentPatient = value;
-                OnPropertyChanged();
-            }
-        }
         private static Doctor? doctor;
         public Doctor? Doctor
         {

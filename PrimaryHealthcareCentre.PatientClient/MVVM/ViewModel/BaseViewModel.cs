@@ -1,4 +1,5 @@
 ﻿using PrimaryHealthcareCentre.Domain;
+using PrimaryHealthcareCentre.Domain.EF;
 using PrimaryHealthcareCentre.Domain.Model;
 using PrimaryHealthcareCentre.UIComponent;
 using PrimaryHealthcareCentre.UIComponent.Commands;
@@ -19,6 +20,8 @@ namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
+        public PrimaryHealthCentreDbContext Db { get; } = new();
+
         public RelayCommand<Window> CloseCommand { get; }
         public RelayCommand<Window> MinimizeCommand { get; }
 

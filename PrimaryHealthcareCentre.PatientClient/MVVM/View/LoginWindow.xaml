@@ -36,25 +36,31 @@
                            Margin="10,7,0,0"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                 <TextBox Style="{StaticResource FieldTextBox}"
-                         Height="40"/>
+                         Height="40"
+                         Text="{Binding FullName, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Стать"
                            Margin="10,7,0,0"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                 <TextBox Style="{StaticResource FieldTextBox}"
-                         Height="40"/>
+                         Height="40"
+                         Text="{Binding Gender, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Дата народження"
                            Margin="10,7,0,0"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                 <TextBox Style="{StaticResource FieldTextBox}"
-                         Height="40"/>
+                         Height="40"
+                         Text="{Binding DateOfBirth, UpdateSourceTrigger=PropertyChanged}"/>
                 <TextBlock Text="Номер телефону"
                            Margin="10,7,0,0"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                 <TextBox Style="{StaticResource FieldTextBox}"
-                         Height="40"/>
+                         Height="40"
+                         Text="{Binding PhoneNumber, UpdateSourceTrigger=PropertyChanged}"/>
                 <StackPanel HorizontalAlignment="Center">
                     <Button Content="Вхід"
-                            Style="{StaticResource CustomGreenButtonStyle}"/>
+                            Style="{StaticResource CustomGreenButtonStyle}"
+                            Command="{Binding LoginCommand}"
+                            CommandParameter="{Binding ElementName=WindowLogin}"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

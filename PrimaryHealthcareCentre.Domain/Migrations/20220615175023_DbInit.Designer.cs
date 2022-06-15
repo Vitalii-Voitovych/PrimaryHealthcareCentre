@@ -12,7 +12,7 @@ using PrimaryHealthcareCentre.Domain.EF;
 namespace PrimaryHealthcareCentre.Domain.Migrations
 {
     [DbContext(typeof(PrimaryHealthCentreDbContext))]
-    [Migration("20220610172413_DbInit")]
+    [Migration("20220615175023_DbInit")]
     partial class DbInit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,21 +35,14 @@ namespace PrimaryHealthcareCentre.Domain.Migrations
                     b.Property<int>("CabinetNumber")
                         .HasColumnType("int");
 
-                    b.Property<string>("Department")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("EndTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FullName")
+                    b.Property<string>("EndTime")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Password")
+                    b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -61,8 +54,9 @@ namespace PrimaryHealthcareCentre.Domain.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("StartTime")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("StartTime")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("DoctorId");
 
@@ -82,6 +76,10 @@ namespace PrimaryHealthcareCentre.Domain.Migrations
 
                     b.Property<int>("ReceptionId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Result")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ExaminationId");
 
@@ -140,19 +138,8 @@ namespace PrimaryHealthcareCentre.Domain.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PassportNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WorkPlace")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("PatientId");
@@ -190,6 +177,9 @@ namespace PrimaryHealthcareCentre.Domain.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PrescriptionId"), 1L, 1);
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
