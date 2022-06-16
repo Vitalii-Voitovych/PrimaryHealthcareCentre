@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 
 namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
 {
@@ -21,12 +22,30 @@ namespace PrimaryHealthcareCentre.PatientClient.MVVM.ViewModel
             Doctors = Db.Doctors.Local.ToObservableCollection();
             AddReceptionCommand = new((doctor) =>
             {
-                var reception = new Reception()
+                if (Date.DayOfWeek == DayOfWeek.Sunday || Date.DayOfWeek == DayOfWeek.Saturday)
                 {
-                    DoctorId = doctor.DoctorId,
-                    PatientId = Patient.PatientId,
-                    DateOfReception = Date
-                };
+                    MessageBox.Show("Не можна записатися у вихіді");
+                    return;
+                }
+                if (TimeOnly.Parse(doctor.StartTime) <= TimeOnly.FromDateTime(Date) && 
+                    TimeOnly.Parse(doctor.EndTime) >= TimeOnly.FromDateTime(Date))
+                {
+                    var reception = new Reception()
+                    {
+                        DoctorId = doctor.DoctorId,
+                        PatientId = Patient.PatientId,
+                        DateOfReception = Date,
+                        IsCompleted = false
+                    };
+                    if (Db.LogOfReception.Local.Contains(reception))
+                    {
+                        MessageBox.Show("Вже є запису на таку годину");
+                        return;
+                    }
+                    Db.LogOfReception.Add(reception);
+                    Db.SaveChanges();
+                    Date = new();
+                }
             });
         }
     }

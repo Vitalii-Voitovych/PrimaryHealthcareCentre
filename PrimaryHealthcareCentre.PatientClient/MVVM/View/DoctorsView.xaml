@@ -29,7 +29,8 @@
                  Background="Transparent"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
                  Height="460"
-                 BorderThickness="0">
+                 BorderThickness="0"
+                 x:Name="doctorListBox">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel IsItemsHost="True" 
@@ -91,7 +92,9 @@
                                 </StackPanel>
                                 <Button Content="Записатися"
                                         Margin="0,5,0,5"
-                                        Style="{StaticResource ListBoxItemButtonStyle}"/>
+                                        Style="{StaticResource ListBoxItemButtonStyle}"
+                                        Command="{Binding ElementName=doctorListBox, Path=DataContext.AddReceptionCommand}" Cursor="Hand"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </Grid>
                     </Border>

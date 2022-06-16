@@ -11,11 +11,12 @@
         <viewModel:PatientViewModel/>
     </UserControl.DataContext>
     <StackPanel>
-        <ListBox ItemsSource="{Binding LogOfReception}"
+        <ListBox ItemsSource="{Binding Receptions}"
                  Background="Transparent"
                  Height="500"
                  BorderThickness="0"
-                 ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 x:Name="receptionListBox">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel IsItemsHost="True"
@@ -42,7 +43,9 @@
                                        Style="{StaticResource ListBoxItemTextBlockStyle}"/>
                             <StackPanel Margin="0,10">
                                 <Button Content="Обстеження"
-                                        Style="{StaticResource ListBoxItemButtonStyle}"/>
+                                        Style="{StaticResource ListBoxItemButtonStyle}"
+                                        Command="{Binding ElementName=receptionListBox, Path=DataContext.AddCurrentExaminationCommand}"
+                                        CommandParameter="{Binding}"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

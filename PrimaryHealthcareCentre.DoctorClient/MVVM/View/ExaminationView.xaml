@@ -41,6 +41,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel VerticalAlignment="Bottom">
                     <TextBlock Text="П.І.П :"
+                               Height="44"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                     <TextBlock Text="Стать :"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
@@ -51,13 +52,15 @@
                 </StackPanel>
                 <StackPanel Grid.Column="1"
                         VerticalAlignment="Center">
-                    <TextBlock Text="{Binding CurrentPatient.FullName}"
+                    <TextBlock Text="{Binding Reception.Patient.FullName}"
+                           Style="{StaticResource PatientDataTextBlockStyle}" 
+                               Height="44"
+                               TextWrapping="WrapWithOverflow"/>
+                    <TextBlock Text="{Binding Reception.Patient.Gender}"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
-                    <TextBlock Text="{Binding CurrentPatient.Gender}"
+                    <TextBlock Text="{Binding Reception.Patient.DateOfBirth}"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
-                    <TextBlock Text="{Binding CurrentPatient.DateOfBirth}"
-                           Style="{StaticResource PatientDataTextBlockStyle}"/>
-                    <TextBlock Text="{Binding CurrentPatient.PhoneNumber}"
+                    <TextBlock Text="{Binding Reception.Patient.PhoneNumber}"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                 </StackPanel>
             </Grid>
@@ -74,9 +77,11 @@
                 <TextBox TextWrapping="WrapWithOverflow"
                      AcceptsReturn="True"
                      Height="125"
+                     Text="{Binding ResultExamination}"
                      Style="{StaticResource FieldTextBox}" Width="274"/>
                 <Button Content="Закінчити"
-                        Style="{StaticResource CustomGreenButtonStyle}" Cursor="Hand"/>
+                        Style="{StaticResource CustomGreenButtonStyle}" Cursor="Hand"
+                        Command="{Binding EndExaminationCommand}"/>
             </StackPanel>
         </StackPanel>
         <StackPanel Grid.Row="1">
@@ -144,7 +149,7 @@
                                 <StackPanel Orientation="Horizontal"
                                         VerticalAlignment="Center">
                                     <TextBlock Text="{Binding Name}"
-                                               Width="140"
+                                               Width="120"
                                            Style="{StaticResource ListBoxItemTextBlockStyle}"/>
                                     <TextBlock Text="{Binding Weight}"
                                            Margin="10,0,0,0"
@@ -171,7 +176,8 @@
                     <uc:HeaderButton Margin="10,0,0,10"
                                      Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/edit.png"
                                      Style="{StaticResource HeaderButtonStyle}" Cursor="Hand"
-                                     Background="#265F2F"/>
+                                     Background="#265F2F"
+                                     Command="{Binding WritePrescription}"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

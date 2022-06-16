@@ -4,6 +4,8 @@ using System.Windows;
 using PrimaryHealthcareCentre.Domain;
 using PrimaryHealthcareCentre.Domain.Model;
 using PrimaryHealthcareCentre.Domain.EF;
+using System.Collections.ObjectModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
 {
@@ -21,8 +23,18 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
             }
         }
 
-        private static Doctor? doctor;
-        public Doctor? Doctor
+        private static Reception reception = null!;
+        public Reception Reception
+        {
+            get => reception;
+            set
+            {
+                reception = value;
+                OnPropertyChanged();
+            }
+        }
+        private static Doctor doctor = null!;
+        public Doctor Doctor
         {
             get => doctor;
             set

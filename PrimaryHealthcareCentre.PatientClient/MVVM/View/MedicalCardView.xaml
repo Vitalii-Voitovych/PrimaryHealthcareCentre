@@ -13,8 +13,8 @@
     </UserControl.DataContext>
     <Grid Margin="15,0,0,0">
         <Grid.RowDefinitions>
+            <RowDefinition Height="2.5*"/>
             <RowDefinition Height="2.3*"/>
-            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -41,7 +41,7 @@
                 </Grid.ColumnDefinitions>
                 <StackPanel VerticalAlignment="Bottom">
                     <TextBlock Text="П.І.П :"
-                           Style="{StaticResource PatientDataTextBlockStyle}"/>
+                           Style="{StaticResource PatientDataTextBlockStyle}" Height="60"/>
                     <TextBlock Text="Стать :"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                     <TextBlock Text="Дата народження :"
@@ -52,7 +52,8 @@
                 <StackPanel Grid.Column="1"
                         VerticalAlignment="Center">
                     <TextBlock Text="{Binding Patient.FullName}"
-                           Style="{StaticResource PatientDataTextBlockStyle}"/>
+                               TextWrapping="WrapWithOverflow"
+                           Style="{StaticResource PatientDataTextBlockStyle}" Height="60"/>
                     <TextBlock Text="{Binding Patient.Gender}"
                            Style="{StaticResource PatientDataTextBlockStyle}"/>
                     <TextBlock Text="{Binding Patient.DateOfBirth}"
@@ -79,7 +80,9 @@
                         Style="{StaticResource FieldTextBox}" Width="274"/>
             </StackPanel>
         </StackPanel>
-        <StackPanel Grid.Row="1">
+        <StackPanel Grid.Row="1"
+                    VerticalAlignment="Bottom"
+                    Margin="0,0,0,10">
             <TextBlock Text="Діагноз"
                        Foreground="#265F2F"
                        FontWeight="Bold"
@@ -89,7 +92,7 @@
                        Margin="0,5,0,0"/>
             <TextBox TextWrapping="WrapWithOverflow"
                       AcceptsReturn="True"
-                      Height="230"
+                      Height="182"
                       IsReadOnly="True"
                       Style="{StaticResource FieldTextBox}" Width="274"/>
         </StackPanel>
