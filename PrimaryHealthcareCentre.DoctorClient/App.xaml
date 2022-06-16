@@ -28,6 +28,9 @@
             <DataTemplate DataType="{x:Type viewModel:ExaminationViewModel}">
                 <view:ExaminationView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:MedicalCardViewModel}">
+                <view:MedicalCardView/>
+            </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:LoginViewModel}">
                 <view:LoginWindow/>
             </DataTemplate>

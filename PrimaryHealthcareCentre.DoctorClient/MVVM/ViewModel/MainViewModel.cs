@@ -24,9 +24,11 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
         public HomeViewModel HomeVM { get; }
         public PatientViewModel PatientVM { get; }
         public ExaminationViewModel ExaminationVM { get; }
+        public MedicalCardViewModel MedicalCardVM { get; }
         public RelayCommand HomeCommand { get; }
         public RelayCommand PatientCommand { get; }
         public RelayCommand ExaminationCommand { get; }
+        public RelayCommand MedCardCommand { get; }
 
         public MainViewModel()
         {
@@ -42,10 +44,12 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
             HomeVM = new();
             PatientVM = new();
             ExaminationVM = new();
+            MedicalCardVM = new();
             CurrentView = HomeVM;
             HomeCommand = new RelayCommand(() => CurrentView = HomeVM);
             PatientCommand = new RelayCommand(() => CurrentView = PatientVM);
             ExaminationCommand = new RelayCommand(() => CurrentView = ExaminationVM);
+            MedCardCommand = new RelayCommand(() => CurrentView = MedicalCardVM);
         }
     }
 }

@@ -39,20 +39,23 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
             });
             EndExaminationCommand = new(() =>
             {
-                var reception = Db.LogOfReception.First(r => r == Reception);
-                reception.IsCompleted = true;
-                Db.SaveChanges();
-                var examination = new Examination()
+                if (Reception is not null)
                 {
-                    ReceptionId = reception.ReceptionId,
-                    Reception = reception,
-                    Result = ResultExamination,
-                    Date = DateTime.Now,
-                };
-                Db.Examinations.Add(examination);
-                Db.SaveChanges();
-                ResultExamination = null!;
-                Reception = null!;
+                    var reception = Db.LogOfReception.First(r => r == Reception);
+                    reception.IsCompleted = true;
+                    Db.SaveChanges();
+                    var examination = new Examination()
+                    {
+                        ReceptionId = reception.ReceptionId,
+                        Reception = reception,
+                        Result = ResultExamination,
+                        Date = DateTime.Now,
+                    };
+                    Db.Examinations.Add(examination);
+                    Db.SaveChanges();
+                    ResultExamination = null!;
+                    Reception = null!;
+                }
             });
             WritePrescription = new(() => 
             {

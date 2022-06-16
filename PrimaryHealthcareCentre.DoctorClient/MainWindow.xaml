@@ -79,6 +79,10 @@
                                    Content="Обстеження"
                                    Style="{StaticResource MenuButtonStyle}" Cursor="Hand"
                                    Command="{Binding ExaminationCommand}"/>
+                    <uc:MenuButton Icon="/PrimaryHealthcareCentre.UIComponent;Component/Images/treatment.png"
+                                   Content="Мед карта"
+                                   Style="{StaticResource MenuButtonStyle}" Cursor="Hand"
+                                   Command="{Binding MedCardCommand}"/>
                 </StackPanel>
             </Border>
             <ContentControl Grid.Row="1"

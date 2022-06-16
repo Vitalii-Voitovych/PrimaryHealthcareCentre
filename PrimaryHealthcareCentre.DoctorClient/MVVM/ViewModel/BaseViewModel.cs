@@ -43,6 +43,7 @@ namespace PrimaryHealthcareCentre.DoctorClient.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
+
         public PrimaryHealthCentreDbContext Db { get; } = new();
 
         public RelayCommand<Window> CloseCommand { get; }

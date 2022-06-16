@@ -6,7 +6,12 @@
              xmlns:local="clr-namespace:PrimaryHealthcareCentre.PatientClient.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <StackPanel HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <TextBlock Text="Вітаємо вас! Дякуюємо що вибрали нас"
+                   FontSize="36"
+                   Foreground="#265F2F"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"/>
+    </StackPanel>
 </UserControl>
